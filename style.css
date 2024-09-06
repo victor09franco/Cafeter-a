@@ -11,6 +11,7 @@
 body {
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
+    text-align: center;
     
 }
 
@@ -30,8 +31,17 @@ body {
      background-size: cover;
      min-height: 100vh;
      display: flex;
-    align-items: center;
+     align-items: center;
+     justify-content: center; /* Centra el contenido en el eje horizontal */
+     align-items: center; /* Centra el contenido en el eje vertical */
+
 }
+
+.header-content {
+    text-align: center;
+    max-width: 1000px; /* Aseguramos que el contenido no se extienda demasiado */
+}
+
 
 .menu {
     position: absolute;
@@ -48,11 +58,21 @@ body {
     color: white;
     font-size: 25px;
     font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logopng{
+    width: 1000px;
+    margin-right: 10px;
 }
 
 .menu .navbar ul li {
     position: relative;
     float: left;
+    margin-left: 20px;
+
 }
 
 .menu .navbar ul li a {
@@ -78,6 +98,10 @@ body {
 .menu label{
     cursor: pointer;
     display: none;
+}
+
+.menu img {
+    width: 50px;
 }
 
 .header-content {
@@ -166,28 +190,28 @@ body {
     margin-bottom: 15px;
 }
 
+/* Sección de servicios */
 .services {
     background-image: linear-gradient(
         rgba(0,0,0,0.7),
         rgba(0,0,0,0.7)),
-        url(images/bg2.jpg);
+        url(images/bg2.jpg); /* Imagen de fondo con un degradado oscuro */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
-    padding: 100px 0 ;
+    padding: 100px 0;
 }
 
 .services-content {
     text-align: center;
 }
 
-.services-content h2{
+.services-content h2 {
     font-size: 55px;
     line-height: 70px;
     color: white;
     text-transform: uppercase;
-    margin-bottom: 50px;  
+    margin-bottom: 50px;
 }
 
 .services-content p {
@@ -199,23 +223,28 @@ body {
 
 .services-group {
     display: flex;
-    justify-content: space-between;
-    margin-bottom:  50px;
-
+    justify-content: space-between; /* Distribuye uniformemente los elementos */
+    margin-bottom: 50px;
+    flex-wrap: wrap; /* Permite el ajuste de los elementos en múltiples líneas si es necesario */
 }
 
 .services-1 {
-    padding: 0 100px;
+    padding: 0 20px; /* Ajuste del padding para mantener espacio */
+    flex: 1 1 30%; /* Permite que los elementos crezcan y se reduzcan, ocupando al menos el 30% del ancho disponible */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto del elemento */
+    margin-bottom: 30px; /* Espacio entre las filas de servicios */
 }
 
 .services-1 img {
-    width: 25px;
+    width: 50px; /* Ajuste del tamaño de las imágenes */
     margin-bottom: 15px;
 }
+
 .services-1 h3 {
     color: #eaccb3;
     font-size: 18px;
 }
+
 
 .general {
     display: flex;
@@ -308,6 +337,15 @@ p {
 
 @media (max-width:991px){
 
+   body{
+    overflow-x: hidden;
+   }
+
+   .header-content h1 {
+    font-size: 40px; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    line-height: 45px; /* Asegura que la altura de línea sea adecuada */
+}
+
     .menu {
         padding: 30px;
     }
@@ -367,16 +405,19 @@ p {
     }
 
     .services-content p {
-        padding: 0;
+        padding: 0 ;
+        font-size: 15px;
     }
 
     .services-group{
         flex-direction: column;
         margin-bottom: 0;
+        
     }
 
     .services-1 {
         margin-bottom: 25px;
+        padding: 0 50px;
     }
 
     .general{
@@ -414,3 +455,4 @@ p {
         text-align: center;
     }
 }
+
